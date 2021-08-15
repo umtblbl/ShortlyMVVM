@@ -9,10 +9,7 @@ class ShortenLinkUseCase @Inject constructor(
     private val repository: LinkRepository
 ) : UseCase<ShortenLinkModel, ShortenLinkUseCase.Params>() {
 
-    override suspend fun buildUseCase(params: Params) =
-        repository.shortenLink(params.link)
+    override suspend fun buildUseCase(params: Params) = repository.shortenLink(params.link)
 
-    data class Params(
-        val link: String
-    )
+    data class Params(val link: String)
 }

@@ -41,7 +41,6 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(
     private fun observeList() {
         viewModel.shortenedLinksLiveData.observe(viewLifecycleOwner) { list ->
             homeAdapter.submitList(list)
-            homeAdapter.notifyDataSetChanged()
         }
     }
 
